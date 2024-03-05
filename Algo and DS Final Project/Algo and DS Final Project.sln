@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Algo and DS Final Project", "Algo and DS Final Project.pyproj", "{893FCAB6-2BAC-469E-81F3-141FCF87227D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{893FCAB6-2BAC-469E-81F3-141FCF87227D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893FCAB6-2BAC-469E-81F3-141FCF87227D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B01EBC8C-733D-4C06-AA58-D9E0EB1B8817}
+	EndGlobalSection
+EndGlobal
