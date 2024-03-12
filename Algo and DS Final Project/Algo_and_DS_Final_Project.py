@@ -61,5 +61,25 @@ nx.draw(G, pos, with_labels=True,node_color="skyblue",node_size=400,edge_color="
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, label_pos=0.5,
                              font_color='red', font_size=9, font_weight='bold')
 
+#TASK TWO: SEARCH LOGIC
+
+#Asks the user to input the start node
+
+#creates function that
+def FindShortestPath():
+
+    #asks user to input the node they want to start at
+    startNode = input("What node would you like to start on?: ")
+
+    #A list of the destinations
+    chargeStationList = ["H", "K", "Q", "T"]
+
+    for i in chargeStationList:
+        print("Path to Charger from " + startNode + ": ", nx.dijkstra_path(G, startNode, i, "weight"))
+        print("Distance from Node " + startNode + " " + "to Node " + i + ": ", nx.dijkstra_path_length(G, startNode, i))
+          
+
+FindShortestPath()
+
 # Show the plot
 plt.show()
