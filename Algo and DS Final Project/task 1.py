@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # Create an empty graph
 G = nx.Graph()
 
-def nodes(self):
+def nodes:
     with open('nodes.txt','r') as f:
         data = f.read().split(',')
     return data
@@ -15,7 +15,7 @@ def nodes(self):
 G.add_nodes_from(nodes)
 
 
-def edges(self):
+def edges:
     with open('edges.txt','r') as f:
         lines = f.readlines()
     return [tuple(line.strip().split(',')) for line in lines]
