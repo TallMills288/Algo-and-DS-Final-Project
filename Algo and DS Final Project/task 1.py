@@ -12,7 +12,7 @@ def nodes:
 
 
 # Add nodes to the graph
-G.add_nodes_from(nodes)
+G.add_nodes_from(nodes())
 
 
 def edges:
@@ -22,7 +22,7 @@ def edges:
 
 
 # Add weighted edges to the graph
-G.add_weighted_edges_from(edges)
+G.add_weighted_edges_from(edges())
 
 # Compute the layout for visualization
 pos = nx.spring_layout(G)
