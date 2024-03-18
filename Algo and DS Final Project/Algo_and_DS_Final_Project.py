@@ -67,17 +67,32 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, label_pos=0.5,
 
 #creates function that
 def FindShortestPath():
-
+    isShortesPath = 0
+    checkShortestLetter = " "
     #asks user to input the node they want to start at
-    startNode = input("What node would you like to start on?: ")
+    startNode = input("What node would you like to start on?: ").upper()
 
     #A list of the destinations
     chargeStationList = ["H", "K", "Q", "T"]
 
     for i in chargeStationList:
+        #print(i)
+        #checks if it is the first run through
+        if i == "H":
+            isShortesPath = nx.dijkstra_path_length(G, startNode, i)
+            checkShortestLetter = i
+        else:
+            print("WE ARE IN HERE")
+            if isShortesPath > nx.dijkstra_path_length(G, startNode, i):
+                isShortesPath = nx.dijkstra_path_length(G, startNode, i) #sets the new shortest path to var
+                checkShortestLetter = i
+
         print("Path to Charger from " + startNode + ": ", nx.dijkstra_path(G, startNode, i, "weight"))
         print("Distance from Node " + startNode + " " + "to Node " + i + ": ", nx.dijkstra_path_length(G, startNode, i))
-          
+    
+    print("----------------------------FINAL-----------------------------------------")
+    print("Path to Charger from " + startNode + ": ", nx.dijkstra_path(G, startNode, checkShortestLetter, "weight"))
+    print("Distance from Node " + startNode + " " + "to Node " + checkShortestLetter + ": ", nx.dijkstra_path_length(G, startNode, checkShortestLetter))
 
 FindShortestPath()
 
