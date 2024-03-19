@@ -67,5 +67,4 @@ FindShortestPath()
 
 # Show the plot
 plt.show()
-print("Nodes:", nodes())
-print("Edges:", edges())
+
