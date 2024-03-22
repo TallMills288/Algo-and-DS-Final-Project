@@ -7,18 +7,17 @@ import matplotlib.pyplot as plt
 G = nx.Graph()
 
 def nodes():
-    with open('nodes.txt','r') as f:
-        data = f.read().split(',')
-    return data
+	with open('nodes.txt','r') as f:
+		data = f.read().split(',')
+	return data
 
 # Add nodes to the graph
 G.add_nodes_from(nodes())
 
 def edges():
-    with open('edges.txt','r') as f:
-        lines = f.readlines()
-    return [(node1.strip(), node2.strip(), int(weight)) for node1, node2, weight in (line.split(',') for line in lines if len(line.split(',')) == 3)]
-
+	with open('edges.txt','r') as f:
+		lines = f.readlines()
+	return [(node1.strip(), node2.strip(), float(weight)) for node1, node2, weight in (line.split(',') for line in lines if len(line.split(',')) ==3)]
 # Add weighted edges to the graph
 G.add_weighted_edges_from(edges())
 
@@ -76,5 +75,4 @@ FindShortestPath()
 
 # Show the plot
 plt.show()
-print("Nodes:", nodes())
-print("Edges:", edges())
+
