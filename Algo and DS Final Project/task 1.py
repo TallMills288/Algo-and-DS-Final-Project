@@ -48,6 +48,13 @@ def FindShortestPath():
     #A list of the destinations
     chargeStationList = ["H", "K", "Q", "T"]
 
+    print("-------------------------------LIST OF PATHS-------------------------------")
+    #prints out a list of the paths
+    for i in chargeStationList:
+            print("Path to Charger from " + startNode + " to node " + i + " is:", nx.dijkstra_path(G, startNode, i, "weight"))
+            print("Distance from Node " + startNode + " " + "to node " + i + ": ", nx.dijkstra_path_length(G, startNode, i))
+
+    #finds which path is the shortest
     for i in chargeStationList:
         #checks if it is the first run through
         if i == "H":
@@ -60,7 +67,8 @@ def FindShortestPath():
                 isShortesPath = nx.dijkstra_path_length(G, startNode, i) #sets the new shortest path to var
                 checkShortestLetter = i
     #prints the shortest path
-    print("Path to Charger from " + startNode + ": ", nx.dijkstra_path(G, startNode, checkShortestLetter, "weight"))
+    print("-------------------------------SHORTEST PATH-------------------------------")
+    print("The shortest path to Charger from " + startNode + " is: ", nx.dijkstra_path(G, startNode, checkShortestLetter, "weight"))
     print("Distance from Node " + startNode + " " + "to Node " + checkShortestLetter + ": ", nx.dijkstra_path_length(G, startNode, checkShortestLetter))
         
         
